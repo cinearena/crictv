@@ -5,7 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Responsive Header with Drawer</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Drawer (Hidden Menu) */
+        .drawer {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            transform: translateX(100%); /* Hidden by default */
+        }
+
+        .drawer.active {
+            display: block;
+            transform: translateX(0); /* Slide in */
+        }
+
+        .drawer-content nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .drawer-content nav ul li {
+            margin: 20px 0;
+        }
+
+        .drawer-content nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            /* Hide the normal navigation on mobile */
+            .nav-links {
+                display: none;
+            }
+
+            /* Show the hamburger icon */
+            .hamburger {
+                display: block;
+            }
+
+            /* Show the drawer when active */
+            .drawer.active {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -30,16 +129,28 @@
 
 <!-- Drawer (Hidden Menu) -->
 <div class="drawer" id="drawer">
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="drawer-content">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
-<script src="script.js"></script> <!-- External JS -->
+<script>
+    // Get the hamburger and drawer elements
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('drawer');
+
+    // Add event listener to toggle the drawer on hamburger click
+    hamburger.addEventListener('click', () => {
+        drawer.classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>
