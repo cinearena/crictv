@@ -13,6 +13,94 @@
             padding: 0;
         }
 
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .directory-item, .file-item {
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+            background-color: #1a1a1a;
+            padding: 10px;
+            width: calc(14.28% - 20px);
+            box-sizing: border-box;
+        }
+        .directory-item img, .file-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform .3s ease;
+        }
+        .directory-item a, .file-item a {
+            text-decoration: none;
+            color: #00bfff;
+            font-weight: 700;
+            display: block;
+            margin-top: 5px;
+            transition: color .3s ease;
+        }
+        .directory-item:hover, .file-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, .3);
+        }
+        .directory-item img:hover, .file-item img:hover {
+            transform: scale(1.1);
+        }
+        .directory-item a:hover, .file-item a:hover {
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+        .telegram-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #0088cc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .telegram-toggle:hover {
+            background-color: #006699;
+        }
+        @media (max-width: 1024px) {
+            .directory-item, .file-item {
+                width: calc(25% - 20px);
+            }
+        }
+        @media (max-width: 768px) {
+            .directory-item, .file-item {
+                width: calc(33.333% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .directory-item, .file-item {
+                width: calc(50% - 20px);
+                margin: 5px;
+                padding: 5px;
+            }
+            .telegram-toggle {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+            h1 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+        }
+
         header {
             background-color: #333;
             color: white;
@@ -169,6 +257,80 @@
         drawer.classList.toggle('active');
     });
 </script>
+
+    <div class="file-container">
+
+        
+
+        <div class='directory-item'>
+            <a href='iplhin.html'><img src='iplhin.jpg' alt='IPL Hindi'></a>
+            <a href='iplhin.html'>IPL Hindi</a></div>
+
+        <div class='directory-item'>
+            <a href='ipleng.html'><img src='ipleng.jpg' alt='IPL English'></a>
+            <a href='ipleng.html'>IPL English</a></div>
+
+       <!--
+        
+
+        
+        <div class='directory-item'>
+            <a href='willow2.html'><img src='willow2hin.jpg' alt='Willow 2'></a>
+            <a href='willow2.html'>Willow 2 Hindi</a></div>
+
+
+        <div class='directory-item'>
+            <a href='willow2eng.html'><img src='willow2eng.jpg' alt='Willow 2'></a>
+            <a href='willow2eng.html'>Willow 2 English</a></div>
+          -->  
+        <div class='directory-item'>
+            <a href='star1hindi.html'><img src='star1hd.jpg' alt='Star 1 HD'></a>
+            <a href='star1hindi.html'>Star Sports 1 Hindi</a></div>
+        <!--
+        <div class='directory-item'>
+            <a href='starsports2hindi.html'><img src='star2.jpg' alt='Star Sports 2'></a>
+            <a href='starsports2hindi.html'>Star Sports 2 Hindi</a></div>
+        -->
+        <div class='directory-item'>
+            <a href='willowsports.html'><img src='willowsports.jpg' alt='Willow Sports'></a>
+            <a href='willowsports.html'>Willow Sports</a></div>
+        
+
+        <div class='directory-item'>
+            <a href='tsports.html'><img src='tsports.jpg' alt='tsports'></a>
+            <a href='tsports.html'>T Sports</a></div>
+
+        <div class='directory-item'>
+            <a href='wwe.html'><img src='wwe.jpg' alt='wwe'></a>
+            <a href='wwe.html'>WWE Network</a></div>
+        
+        <div class='directory-item'>
+            <a href='ptv.html'><img src='ptv.jpg' alt='PTV'></a>
+            <a href='ptv.html'>PTV</a></div>
+        
+        <div class='directory-item'>
+            <a href='geosuper.html'><img src='geosuper.jpg' alt='Geo Super'></a>
+            <a href='geosuper.html'>Geo Super</a></div>
+
+        <div class='directory-item'>
+            <a href='tencricket.html'><img src='tencricket.jpg' alt='TEN CRICKET'></a>
+            <a href='tencricket.html'>TEN CRICKET</a></div>
+        
+        
+        <div class='directory-item'>
+            <a href='tnt1.html'><img src='tnt1.jpg' alt='TNT 1'></a>
+            <a href='tnt1.html'>TNT Sports 1</a></div>
+        
+        <!--
+        <div class='directory-item'>
+            <a href='https://cricstream4u.github.io/willow/'><img src='willow.jpg' alt='Fancode Live Events'></a>
+            <a href='https://cricstream4u.github.io/willow/'>Willow 2</a></div>
+        -->
+        
+        
+      
+           </div>
+
 
 </body>
 </html>
